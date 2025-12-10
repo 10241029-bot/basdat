@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from Implementasi.config import *
+from config import *
 
 # Set konfigurasi halaman dashboard
 st.set_page_config("Dashboard Cookie Club", page_icon="🍪", layout="wide")
@@ -25,7 +25,7 @@ def tabelCustomers_dan_export():
     col1, col2, col3 = st.columns(3)
     with col1:
         st.metric(label="👥 Total Pelanggan", value=total_customers)
-    with col2:
+    with col2:  
         st.metric(label="🛍️ B2C", value=total_b2c)
     with col3:
         st.metric(label="🏢 B2B", value=total_b2b)

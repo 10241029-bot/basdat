@@ -22,7 +22,7 @@ st.markdown("""
         <h1 style='color: #8B4513; margin: 0;'>🍪 Cookie Club - Data Management</h1>
         <p style='color: #654321; margin: 5px 0 0 0;'>Lihat & Kelola Data Tabel</p>
     </div>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)    
 
 # Sidebar
 st.sidebar.title("📊 Pilih Tabel")
