@@ -97,15 +97,3 @@ pip install --upgrade -r requirements.txt
 ```powershell
 streamlit run visualisasi_cookie.py --server.port 8502
 ```
-
-## 📞 Support
-
-Jika ada error atau pertanyaan, cek:
-1. Database sudah ter-import
-2. XAMPP MySQL running
-3. Dependencies sudah ter-install
-4. Python versi 3.8+
-
----
-
-🍪 **Happy Analyzing!** 📊
