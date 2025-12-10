@@ -80,8 +80,8 @@ def display_table(table_name, title, emoji):
         st.metric("📊 Total Baris", len(df))
     with col2:
         st.metric("📋 Total Kolom", len(df.columns))
-    with col3:
-        st.metric("💾 Ukuran", f"{df.memory_usage().sum() / 1024:.1f} KB")
+  
+       
     
     st.markdown("---")
     

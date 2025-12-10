@@ -151,8 +151,8 @@ erDiagram
     JURNAL_TRANSAKSI {
         int jurnal_id PK
         date tanggal
-        int akun_debit_id 
-        int akun_kredit_id 
+        int akun_debit_id FK
+        int akun_kredit_id FK
         decimal nominal
         varchar deskripsi
         int penjualan_id FK "Optional"
