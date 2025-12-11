@@ -5,7 +5,7 @@ from datetime import datetime
 from config import *
 
 # Set konfigurasi halaman dashboard
-st.set_page_config("Dashboard Cookie Club", page_icon="🍪", layout="wide")
+st.set_page_config("Data Owner", page_icon="🍪", layout="wide")
 
 # ==================== CUSTOMERS ====================
 # Ambil data pelanggan
@@ -285,7 +285,7 @@ def tabelSalesDetails_dan_export():
         )
 
 # ==================== SIDEBAR NAVIGATION ====================
-st.sidebar.title("🍪 Navigasi Data Cookie Club")
+st.sidebar.title("Navigasi Dashboard")
 
 # Pilihan tabel dengan radio button
 page = st.sidebar.radio(
@@ -295,7 +295,7 @@ page = st.sidebar.radio(
 )
 
 # ==================== MAIN CONTENT ====================
-st.title("🍪 Cookie Club Dashboard")
+st.title(" Cookie Club Dashboard")
 st.markdown("---")
 
 # Tampilkan halaman berdasarkan pilihan

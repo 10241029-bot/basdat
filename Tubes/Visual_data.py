@@ -25,7 +25,7 @@ st.markdown("""
 """, unsafe_allow_html=True)    
 
 # Sidebar
-st.sidebar.title("📊 Pilih Tabel")
+st.sidebar.title("MENU")
 page = st.sidebar.radio(
     "Tabel Database:",
     ["👤 Owner", "🍪 Produk", "🛒 Penjualan", "📦 Detail Penjualan", 
@@ -33,9 +33,6 @@ page = st.sidebar.radio(
      "🏪 Supplier", "📋 Purchase Order", "📦 PO Item", "💰 Akun Keuangan",
      "💸 Beban Operasional", "📊 Jurnal Transaksi"]
 )
-
-st.sidebar.markdown("---")
-st.sidebar.info("💡 Pilih kolom yang ingin ditampilkan pada setiap tabel")
 
 
 # ==================== FUNGSI AMBIL DATA DARI TABEL ====================
