@@ -47,7 +47,7 @@ def view_products():
             cursor = connection.cursor()
             query = "SELECT * FROM PRODUK"
             cursor.execute(query)
-            result = cursor.fetchall()
+            result = cursor.fetchall() 
             cursor.close()
             connection.close()
             return result
@@ -270,3 +270,34 @@ def get_dashboard_summary():
             print(f"Error: {e}")
             return None
     return None
+
+
+def view_customer_dengan_belanja():
+    """JOIN 2 TABEL : CUSTOMER DENGAN PENJUALAN"""
+
+    connection = create_connection()
+    if connection:
+        try: 
+            cursor = connection.cursor()
+
+            query = """
+                SELECT 
+                    c.customer_id,
+                    c.nama_customer,
+                    c.tipe, 
+                    COALESCE(SUM(p.penjualan_id),0) AS jumlah_transaksi,
+                    COALESCE(SUM(p.total_transaksi),0) AS total_belanja
+                    FROM CUSTOMER C
+                    LEFT JOIN PENJUALAN P ON c.customer_id = p.customer_id
+                    GROUP BY c.customer_id, c.nama_customer, c.tipe
+                    ORDER BY total_belanja DESC 
+                  """
+            cursor.execute(query)
+            result = cursor.fetchall()
+            cursor.close()
+            connection.close()
+            return result
+        except Error as e:
+            print(f"Error: {e}")
+            return []
+        

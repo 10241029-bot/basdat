@@ -109,6 +109,8 @@ def display_table(table_name, title, emoji):
         st.info("ℹ️ Pilih minimal 1 kolom untuk ditampilkan")
 
 
+
+
 # ==================== HALAMAN: TABEL OWNER ====================
 if page == "👤 Owner":
     display_table("OWNER", "Data Owner", "👤")
