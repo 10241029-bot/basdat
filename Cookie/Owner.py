@@ -24,13 +24,13 @@ def tabelCustomers_dan_export():
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric(label="👥 Total Pelanggan", value=total_customers)
+        st.metric(label="Total Pelanggan", value=total_customers)
     with col2:  
-        st.metric(label="🛍️ B2C", value=total_b2c)
+        st.metric(label="B2C", value=total_b2c)
     with col3:
-        st.metric(label="🏢 B2B", value=total_b2b)
+        st.metric(label="B2B", value=total_b2b)
 
-    st.sidebar.header("🔧 Filter Pelanggan")
+    st.sidebar.header("Filter Pelanggan")
     
     # Filter berdasarkan tipe
     tipe_filter = st.sidebar.multiselect(
@@ -51,7 +51,7 @@ def tabelCustomers_dan_export():
         (df_customers['status'].isin(status_filter))
     ]
 
-    st.markdown("### 📋 Tabel Data Pelanggan")
+    st.markdown("### Tabel Data Pelanggan")
     
     showdata = st.multiselect(
         "Pilih Kolom yang Ditampilkan:",
@@ -65,7 +65,7 @@ def tabelCustomers_dan_export():
         # Download CSV
         csv = filtered_df[showdata].to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Download Data Pelanggan sebagai CSV",
+            label="Download Data Pelanggan sebagai CSV",
             data=csv,
             file_name='data_pelanggan_cookie.csv',
             mime='text/csv'
@@ -90,15 +90,15 @@ def tabelProducts_dan_export():
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.metric(label="🍪 Total Produk", value=total_products)
+        st.metric(label="Total Produk", value=total_products)
     with col2:
-        st.metric(label="⭐ Regular", value=total_regular)
+        st.metric(label="Regular", value=total_regular)
     with col3:
-        st.metric(label="💎 Premium", value=total_premium)
+        st.metric(label="Premium", value=total_premium)
     with col4:
-        st.metric(label="💰 Harga Rata-rata", value=f"Rp {avg_price:,.0f}")
+        st.metric(label="Harga Rata-rata", value=f"Rp {avg_price:,.0f}")
 
-    st.sidebar.header("🔧 Filter Produk")
+    st.sidebar.header("Filter Produk")
     
     # Filter jenis produk
     jenis_filter = st.sidebar.multiselect(
@@ -109,7 +109,7 @@ def tabelProducts_dan_export():
     
     filtered_df = df_products[df_products['jenis_produk'].isin(jenis_filter)]
 
-    st.markdown("### 📋 Tabel Data Produk")
+    st.markdown("### Tabel Data Produk")
     
     showdata = st.multiselect(
         "Pilih Kolom yang Ditampilkan:",
@@ -123,7 +123,7 @@ def tabelProducts_dan_export():
         # Download CSV
         csv = filtered_df[showdata].to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Download Data Produk sebagai CSV",
+            label="Download Data Produk sebagai CSV",
             data=csv,
             file_name='data_produk_cookie.csv',
             mime='text/csv'
@@ -151,19 +151,19 @@ def tabelSales_dan_export():
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric(label="🛍️ Total Transaksi", value=total_sales)
+        st.metric(label="Total Transaksi", value=total_sales)
     with col2:
-        st.metric(label="💵 Total Pendapatan", value=f"Rp {total_revenue:,.0f}")
+        st.metric(label="Total Pendapatan", value=f"Rp {total_revenue:,.0f}")
     with col3:
-        st.metric(label="📊 Rata-rata Transaksi", value=f"Rp {avg_sale:,.0f}")
+        st.metric(label="Rata-rata Transaksi", value=f"Rp {avg_sale:,.0f}")
 
     col4, col5 = st.columns(2)
     with col4:
-        st.metric(label="🛒 Penjualan B2C", value=f"Rp {total_b2c_sales:,.0f}")
+        st.metric(label="Penjualan B2C", value=f"Rp {total_b2c_sales:,.0f}")
     with col5:
-        st.metric(label="🏢 Penjualan B2B", value=f"Rp {total_b2b_sales:,.0f}")
+        st.metric(label="Penjualan B2B", value=f"Rp {total_b2b_sales:,.0f}")
 
-    st.sidebar.header("🔧 Filter Penjualan")
+    st.sidebar.header("Filter Penjualan")
     
     # Filter tipe penjualan
     tipe_filter = st.sidebar.multiselect(
@@ -192,7 +192,7 @@ def tabelSales_dan_export():
     else:
         filtered_df = df_sales[df_sales['tipe_penjualan'].isin(tipe_filter)]
 
-    st.markdown("### 📋 Tabel Data Penjualan")
+    st.markdown("### Tabel Data Penjualan")
     
     df_display = filtered_df.copy()
     df_display['tgl_penjualan'] = df_display['tgl_penjualan'].dt.strftime('%Y-%m-%d')
@@ -209,7 +209,7 @@ def tabelSales_dan_export():
         # Download CSV
         csv = df_display[showdata].to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Download Data Penjualan sebagai CSV",
+            label="Download Data Penjualan sebagai CSV",
             data=csv,
             file_name='data_penjualan_cookie.csv',
             mime='text/csv'
@@ -241,27 +241,27 @@ def tabelSalesDetails_dan_export():
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric(label="📝 Total Item", value=total_items)
+        st.metric(label="Total Item", value=total_items)
     with col2:
-        st.metric(label="📦 Total Kuantitas", value=total_quantity)
+        st.metric(label="Total Kuantitas", value=total_quantity)
     with col3:
-        st.metric(label="💰 Total Revenue", value=f"Rp {total_revenue:,.0f}")
+        st.metric(label="Total Revenue", value=f"Rp {total_revenue:,.0f}")
 
     # Tampilkan produk terlaris
-    st.markdown("### 🏆 Top 3 Produk Terlaris")
+    st.markdown("### Top 3 Produk Terlaris")
     col1, col2, col3 = st.columns(3)
     for idx, (produk, qty) in enumerate(top_products.items()):
         if idx == 0:
             with col1:
-                st.info(f"🥇 {produk}: {qty} terjual")
+                st.info(f"1. {produk}: {qty} terjual")
         elif idx == 1:
             with col2:
-                st.info(f"🥈 {produk}: {qty} terjual")
+                st.info(f"2. {produk}: {qty} terjual")
         elif idx == 2:
             with col3:
-                st.info(f"🥉 {produk}: {qty} terjual")
+                st.info(f"3. {produk}: {qty} terjual")
 
-    st.markdown("### 📋 Tabel Detail Penjualan")
+    st.markdown("### Tabel Detail Penjualan")
     
     df_display = df_sales_details.copy()
     df_display['tgl_penjualan'] = df_display['tgl_penjualan'].dt.strftime('%Y-%m-%d')
@@ -278,7 +278,7 @@ def tabelSalesDetails_dan_export():
         # Download CSV
         csv = df_display[showdata].to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Download Detail Penjualan sebagai CSV",
+            label="Download Detail Penjualan sebagai CSV",
             data=csv,
             file_name='data_detail_penjualan_cookie.csv',
             mime='text/csv'
@@ -290,31 +290,31 @@ st.sidebar.title("Navigasi Dashboard")
 # Pilihan tabel dengan radio button
 page = st.sidebar.radio(
     "Pilih Tabel:",
-    ["👥 Pelanggan", "🍪 Produk", "🛍️ Penjualan", "📋 Detail Penjualan"],
+    ["Pelanggan", "Produk", "Penjualan", "Detail Penjualan"],
     index=0
 )
 
 # ==================== MAIN CONTENT ====================
-st.title(" Cookie Club Dashboard")
+st.title("Cookie Club Dashboard")
 st.markdown("---")
 
 # Tampilkan halaman berdasarkan pilihan
-if page == "👥 Pelanggan":
+if page == "Pelanggan":
     tabelCustomers_dan_export()
 
-elif page == "🍪 Produk":
+elif page == "Produk":
     tabelProducts_dan_export()
 
-elif page == "🛍️ Penjualan":
+elif page == "Penjualan":
     tabelSales_dan_export()
 
-elif page == "📋 Detail Penjualan":
+elif page == "Detail Penjualan":
     tabelSalesDetails_dan_export()
 
 # Footer
 st.markdown("---")
 st.markdown("""
     <div style='text-align: center; color: #888;'>
-        <p>🍪 Cookie Club Dashboard | KELOMPOK 8 BASDAT A</p>
+        <p>Cookie Club Dashboard | KELOMPOK 8 BASDAT A</p>
     </div>
 """, unsafe_allow_html=True)
